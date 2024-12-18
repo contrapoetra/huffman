@@ -570,10 +570,12 @@ function dropHandler(ev, mode) {
                 .then(async(value) => {
                     let titleInfo = document.querySelector('.title span');
                         titleInfo.innerText = "decoding...";
+                        subtitle.innerText = "";
 
                         let decodedString = await Huffman.decode(value);
 
                         titleInfo.innerText = "done...";
+                        subtitle.innerText = "";
                         let blob = new Blob([decodedString], { type: "text/plain" })
                         var a = document.createElement("a");
                         document.body.appendChild(a);
